@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Bienvuenue dans l'aide aux tags pour StackOverflow</title>
+</head>
+<body>
+   <h1>Bienvuenue dans l'aide aux tags StackOverflow</h1>
+   <div class="image">
+       <img src="{{url_for('static', filename= 'img/image_OC.png')}}" 
+       width="350"
+       height="50"/>
+    </div>
+
+    <p><b>Pour l'API traditionnelle :  </b></p>
+    <p>chemin d'acces : /postjson via requete POST + JSON avec POSTMAN par exemple</p>
+    <p> {"Question": ....... } </p>
+
+    <form action="{{url_for('predict_tags')}}" method="post">
+    <label>Veuillez saisir ci apres le texte à tagger :</label>
+    <p><b>Exemple de question classique :  </b></p>
+    <p>How can I open a csv file with python pandas ?</p>
+    <p><b>Exemple de question chaotique :  </b></p>
+    <p>Bonjour, tiit a a a the is Je m'called Jean-Claude  ????:::   rois.  grils !!! How can I open a csv file with python pandas ? Bonj'can', 'open', 'csv', 'file', 'with', 'python', 'pandas' </p>
+    <br />
+
+    <textarea name="question" rows="4" cols="50"></textarea> 
+    <div class="button">
+        <button type="submit">Envoyer le texte pour le traitement</button>
+    </div>
+
+    </form>
+
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Bienvuenue dans l'aide aux tags pour StackOverflow</title>
+</head>
+<body>
+   <h1>Bienvuenue dans l'aide aux tags StackOverflow</h1>
+   <div class="image">
+       <img src="{{url_for('static', filename= 'img/image_OC.png')}}" 
+       width="350"
+       height="50"/>
+    </div>
+    <p><b>Voici le rappel de la question</b></p>
+    <p></p>{{ question }}</p>
+
+    <p><b>Voici les tokens issus de la question</b></p>
+    <p></p>{{ tags_question }}</p>
+
+    <p><b>Voici les tags identifiés par le model</b></p>
+    <p></p>{{ results }}</p>
+
+    <input type="button" value="Retourner au menu principal pour tagger une nouvelle question" onclick="javascript:history.go(-1)" />
+
+    
+</body>
+</html>
